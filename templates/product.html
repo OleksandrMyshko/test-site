@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                {% for image in product.productimage_set.all %}
+                    <img src="{{ image.img.url }}" class="img-responsive">
+                {% endfor %}
+            </div>
+            <div class="col-lg-6">
+                <h1 class="text-center">
+                    {{ product.name }}
+                </h1>
+                <div class="">
+                    <p>Price: {{ product.price }} UAH</p>
+                </div>
+                <div class="">
+                    <!-- Nav tabs -->
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#description" aria-controls="home" role="tab" data-toggle="tab">Описание</a></li>
+                        <li role="presentation"><a href="#delivery" aria-controls="profile" role="tab" data-toggle="tab">Доставка</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Отзывы</a></li>
+                        <li role="presentation"><a href="#сharacteristics" aria-controls="settings" role="tab" data-toggle="tab">Характеристики</a></li>
+                      </ul>
+
+                      <!-- Tab panes -->
+                      <div class="tab-content product-tabs">
+                        <div role="tabpanel" class="tab-pane active" id="description">{{ product.description }}</div>
+                        <div role="tabpanel" class="tab-pane" id="delivery"><h3>Как осуществляется воставка</h3></div>
+                        <div role="tabpanel" class="tab-pane" id="messages"><h2>Отзывы</h2></div>
+                        <div role="tabpanel" class="tab-pane" id="сharacteristics"></div>
+                      </div>
+                </div>
+                <div>
+                    <form id="form_buying_product"  class="form-inline" action="{% url 'basket_adding' %}">{% csrf_token %}
+                        <div class="form-group">
+                            <input class="form-control" type="number" name="number" id="number">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-buy" type="submit" id="submit_btn"
+                                data-product_id = '{{ product.id }}'
+                                data-name = '{{ product.name }}'
+                                data-price = '{{ product.price }}'
+                            >
+                                Купить
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

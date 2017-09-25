@@ -1,0 +1,103 @@
+html, body {
+    height: 100%;
+    max-height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #edeef0;
+}
+
+.navbar{
+    margin-bottom: 0px;
+}
+
+.section-top{
+    margin-top: 20px;
+}
+
+.section{
+    margin-top: 50px;
+}
+
+.product-item{
+    margin-top: 25px;
+    height: 360px;
+    background-color: white;
+    border: 1px solid lightgray;
+    position: relative;
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+
+.add-to-card-btn{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 15px;
+}
+
+.discount{
+    position: absolute;
+    top: 30%;
+    width: 30%;
+    background: #35bd35;
+    padding: 3px;
+    color: white;
+    font-weight: 700;
+}
+
+.section-delivery{
+    height: 300px;
+    background-color: #49b349;
+    text-align: center;
+    color: white;
+}
+
+.wrapper-content{
+    overflow: auto;
+    padding-bottom: 180px;
+}
+
+.footer{
+    position: relative;
+    margin-bottom: -180px;
+    height: 180px;
+    clear: both;
+    background-color: white;
+}
+
+.product-tabs{
+    margin-top: 10px;
+}
+
+.navbar-top{
+    min-height: 10px;
+    height: 20px;
+    border: none;
+    background-color: green;
+    border-radius: 0;
+}
+
+.navbar-main{
+    background-color: #35bd35;
+    border: none;
+}
+
+.basket-container{
+    position: relative;
+    width: 400px;
+    padding: 15px 10px;
+}
+
+.basket-item{
+    position: absolute;
+    top:50px;
+    width: 400px;
+    z-index: 2;
+    padding: 10px;
+    background-color:#35bd90;
+}
+
+.form-error{
+    color: red;
+}
